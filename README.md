@@ -14,7 +14,7 @@ TO RUN USING DOCKER-COMPOSE
 2) then follow instructions below:
 
 cd symfony_docker_compose/app
-change .env.local to .env --> insert your mysql container User/Password/Host/Port/Db_name
+copy .env.local and rename .env --> insert your mysql container User/Password/Host/Port/db_name/db_version
 composer update
 cd ../   --> to enter in symfony_docker_compose
 docker exec -it php74-container(or the name you decided for your php container) bash
