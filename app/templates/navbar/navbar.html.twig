@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light"
+     style="height: 70px;">
+    <a class="navbar-brand" href="{{ path('service.index') }}">Symfony</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a class="nav-link" href="{{ path('service.index') }}">View AWS services</a></li>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li><a class="nav-link" href="{{ path('logout') }}">Logout</a></li>
+            <li class="">Name: {{ app.user.name }}</li>
+        {% else %}
+            <li><a class="nav-link" href="{{ path('login') }}">Login</a></li>
+            <li><a class="nav-link" href="{{ path('register') }}">Register</a></li>
+        {% endif %}
+    </ul>
+</nav>

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AWS Services{% endblock %}
+
+{% block body %}
+
+    <h1>Here below you can find all the AWS Services</h1>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-notice text-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Show</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for service in services %}
+            <tr>
+                <th scope="row">{{ service.id }}</th>
+                <td>{{ service.name }}</td>
+                <td>{{ service.description }}</td>
+                <td><a href="{{ path('service.show', {id: service.id}) }}" class="fas fa-eye text-primary"></a></td>
+                <td><a href="{{ path('service.edit', {id: service.id}) }}" class="fas fa-edit text-warning"></a></td>
+                <td><a href="{{ path('service.delete', {id: service.id}) }}" class="fas fa-trash text-danger"></a></td>
+            </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}

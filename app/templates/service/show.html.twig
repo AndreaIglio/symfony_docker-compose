@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AWS {{ service.name }}{% endblock %}
+
+{% block body %}
+
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>{{ service.id }}</th>
+                <td>{{ service.name }}</td>
+                <td>{{ service.description }}</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+
+{% endblock %}
